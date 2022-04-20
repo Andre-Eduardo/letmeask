@@ -5,7 +5,14 @@ import googleIconImg from '../assets/images/google-icon.svg'
 
 import "../styles/auth.scss"
 import { Button } from '../components/Button'
+import { FormEvent } from 'react'
 export function NewRoom() {
+
+  async function handleCreateRoom(event: FormEvent) {
+    event.preventDefault()
+  }
+
+
   return (
     <div id="page-auth">
       <aside>
@@ -17,7 +24,7 @@ export function NewRoom() {
         <div className='main-content'>
           <img src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
-          <form>
+          <form onSubmit={handleCreateRoom}>
             <input
               type="text"
               placeholder="Nome da sala"
